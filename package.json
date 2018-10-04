@@ -1,0 +1,28 @@
+{
+  "name": "omdbot",
+  "version": "0.1.0",
+  "description": "A sample Webhook for Dialogflow",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.16.3"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bipinm/omdbbot"
+  },
+  "keywords": [
+    "node",
+    "express"
+  ],
+  "author": "Bipin M",
+  "contributors": [
+    "Bipin M <bips3421@yahoo.com>"
+  ],
+  "license": "MIT"
+}

@@ -1,1 +1,1 @@
-# omdbbot
+# Sample application for testing Fulfillment functionality in DialogFlow
