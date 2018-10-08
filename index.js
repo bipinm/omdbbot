@@ -13,9 +13,7 @@ app.get('/', function (req, res) {
   res.send('Hi There.. how are you ?')
 });
  
-
-
-app.post('/getMovieList',function (request,response)  {
+app.post('/fulfillment',function (request,response)  {
 
   console.log(request.body);
 
@@ -25,7 +23,6 @@ app.post('/getMovieList',function (request,response)  {
     "displayText" : "Error. Can you try it again ? "
   }));
 });
-
 
 console.log('Application listening on port 8080...');
 app.listen(8080);
