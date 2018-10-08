@@ -7,7 +7,10 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "express-basic-auth": "^1.1.5",
+    "actions-on-google": "^2.4.1",
+    "dialogflow-fulfillment": "^0.5.0"
   },
   "engines": {
     "node": ">=8.0.0"
