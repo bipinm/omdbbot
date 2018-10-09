@@ -32,6 +32,7 @@ function handleAction(req, res) {
 
 var queryParameters = "&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&vote_count.gte=100";
 var resultCount = 0;
+var movieCount = 0;
 
   switch(req.queryResult.action) {
     case "getMovieList":
@@ -41,9 +42,7 @@ var resultCount = 0;
       
       if(req.queryResult.parameters.hasOwnProperty('movieCount')) {
         
-        var movieCount = req.queryResult.parameters.movieCount;
-        if(movieCount > 20)
-          queryParameters += "&page=" + movieCount / 20 + 1;
+        movieCount = req.queryResult.parameters.movieCount;
       }
 
       var startDate = req.queryResult.parameters.period.startDate.substring(0,10);
@@ -93,7 +92,11 @@ function prepareMovieResults(jsonBody, count) {
   fulfillmentMessages.push({"text": { "text": movies }});
 
   for(let index in jsonBody.results) {
-     movies.push('"' + jsonBody.results[index].original_title + '"; Rating: ' + jsonBody.results[index].vote_average)
+    
+    if(count > 0 && index > count)
+      break;
+    
+    movies.push('"' + jsonBody.results[index].original_title + '"; Rating: ' + jsonBody.results[index].vote_average + "\n")
   }
 
   return {"fulfillmentText": fulfillmentText, "fulfillmentMessages": fulfillmentMessages};
