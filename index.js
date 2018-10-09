@@ -61,8 +61,6 @@ var movieCount = 0;
         return result.json();
       }).then(response => {
 
-        console.log(response);
-
         var output = prepareMovieResults(response, movieCount);
         res.setHeader('Content-Type', 'application/json');
         res.send(JSON.stringify(output));
@@ -75,7 +73,9 @@ var movieCount = 0;
       break;
 
     default:
-      console.log('Unknown');
+      console.log('Unknown Action');
+      res.setHeader('Content-Type', 'application/json');
+        res.send(JSON.stringify({"fulfillmentText": "I'm sorry, i did not understand that!"}));
       break;
   }
 }   
